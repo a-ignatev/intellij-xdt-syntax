@@ -11,7 +11,7 @@ as of 08.11.2023.
 ## Features
 
 - Syntax highlighting
-- [Supplementary information display from the fields catalog] TODO
+- Supplementary information display from the fields catalog
 
 ## Support Further Development
 
