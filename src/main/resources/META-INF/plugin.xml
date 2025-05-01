@@ -1,15 +1,14 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.aignatev.intellijxdtsyntax</id>
-    <name>intellij-xdt-syntax</name>
-    <vendor>a-ignatev</vendor>
+    <name>XDT Syntax</name>
+    <vendor>Andrei Ignatev</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.aignatev.intellijxdtsyntax.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.aignatev.intellijxdtsyntax.startup.MyProjectActivity" />
+        <fileTypeFactory implementation="com.github.aignatev.intellijxdtsyntax.factory.XdtFileTypeFactory"/>
+        <lang.syntaxHighlighterFactory language="XDT"
+                                       implementationClass="com.github.aignatev.intellijxdtsyntax.factory.XdtSyntaxHighlighterFactory"/>
     </extensions>
 </idea-plugin>
