@@ -8,10 +8,26 @@ the [KBV IT update website](https://update.kbv.de/ita-update/Service-Information
 as of 08.11.2023.
 <!-- Plugin description end -->
 
+![Current File](/assets/screenshot.png "xDT file highlighting")
+![Current File](/assets/demo.gif "xDT language injection")
+
 ## Features
 
 - Syntax highlighting
+- Syntax highlighting for xDT language injection in other files (currently only Kotlin)
 - Supplementary information display from the fields catalog
+
+## Installation
+
+1. Install a compatible JetBrains IDE, such as IntelliJ IDEA, CLion, PyCharm, or other IntelliJ-based IDEs
+2. Launch the IDE and open plugin settings
+3. Search for **xdt-syntax** and click install
+
+## Usage
+
+- Files with extension ***.xdt** are automatically highlighted
+- In other files, such as Kotlin, XDT language can be injected into strings. It happens automatically if the content
+  looks like it has xDT lines.
 
 ## Support Further Development
 
