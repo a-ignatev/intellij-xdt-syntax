@@ -1,5 +1,6 @@
-package com.github.aignatev.intellijxdtsyntax.xdt
+package com.github.aignatev.intellijxdtsyntax.xdt.tokens
 
+import com.github.aignatev.intellijxdtsyntax.xdt.XdtLanguage
 import com.intellij.psi.tree.IElementType
 
 class XdtTokenType(debugName: String) : IElementType(debugName, XdtLanguage)

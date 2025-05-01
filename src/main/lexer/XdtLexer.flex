@@ -12,10 +12,10 @@
 
 %%
 <YYINITIAL> {
-    ^[0-9]{3} {
-        yybegin(AFTER_LINE_LENGTH);
-        return com.github.aignatev.intellijxdtsyntax.xdt.XdtTypes.INSTANCE.getLINE_LENGTH();
-    }
+    ^[ \t]*[0-9]{3} {
+            yybegin(AFTER_LINE_LENGTH);
+            return com.github.aignatev.intellijxdtsyntax.xdt.tokens.XdtTypes.INSTANCE.getLINE_LENGTH();
+        }
     \r?\n     { return com.intellij.psi.TokenType.WHITE_SPACE; }
     .         { return com.intellij.psi.TokenType.BAD_CHARACTER; }
 }
@@ -23,14 +23,14 @@
 <AFTER_LINE_LENGTH> {
     [0-9]{4} {
         yybegin(AFTER_IDENTIFIER);
-        return com.github.aignatev.intellijxdtsyntax.xdt.XdtTypes.INSTANCE.getIDENTIFIER();
+        return com.github.aignatev.intellijxdtsyntax.xdt.tokens.XdtTypes.INSTANCE.getIDENTIFIER();
     }
     \r?\n     { yybegin(YYINITIAL); return com.intellij.psi.TokenType.WHITE_SPACE; }
     .         { yybegin(YYINITIAL); return com.intellij.psi.TokenType.BAD_CHARACTER; }
 }
 
 <AFTER_IDENTIFIER> {
-    [^\r\n]+? { return com.github.aignatev.intellijxdtsyntax.xdt.XdtTypes.INSTANCE.getDATA(); }
+    [^\r\n]+? { return com.github.aignatev.intellijxdtsyntax.xdt.tokens.XdtTypes.INSTANCE.getDATA(); }
     \r?\n    { yybegin(YYINITIAL); return com.intellij.psi.TokenType.WHITE_SPACE; }
     .        { return com.intellij.psi.TokenType.BAD_CHARACTER; }
 }

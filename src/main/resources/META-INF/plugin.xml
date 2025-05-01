@@ -7,10 +7,15 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <fileTypeFactory implementation="com.github.aignatev.intellijxdtsyntax.factory.XdtFileTypeFactory"/>
+        <fileTypeFactory implementation="com.github.aignatev.intellijxdtsyntax.extensions.XdtFileTypeFactory"/>
+        <lang.parserDefinition language="XDT"
+                               implementationClass="com.github.aignatev.intellijxdtsyntax.extensions.XdtParserDefinition"/>
         <lang.syntaxHighlighterFactory language="XDT"
-                                       implementationClass="com.github.aignatev.intellijxdtsyntax.factory.XdtSyntaxHighlighterFactory"/>
-        <codeInsight.inlayProvider implementationClass="com.github.aignatev.intellijxdtsyntax.xdt.XdtInlayHintsProvider"
-                                   language="XDT"/>
+                                       implementationClass="com.github.aignatev.intellijxdtsyntax.extensions.XdtSyntaxHighlighterFactory"/>
+        <multiHostInjector implementation="com.github.aignatev.intellijxdtsyntax.extensions.XdtLanguageInjector"/>
+    </extensions>
+    <extensions defaultExtensionNs="com.intellij.codeInsight">
+        <inlayProvider implementationClass="com.github.aignatev.intellijxdtsyntax.extensions.XdtInlayHintsProvider"
+                       language="XDT"/>
     </extensions>
 </idea-plugin>

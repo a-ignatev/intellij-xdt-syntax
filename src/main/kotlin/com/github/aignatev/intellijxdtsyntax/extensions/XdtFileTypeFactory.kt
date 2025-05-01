@@ -1,6 +1,6 @@
-package com.github.aignatev.intellijxdtsyntax.factory
+package com.github.aignatev.intellijxdtsyntax.extensions
 
-import com.github.aignatev.intellijxdtsyntax.xdt.XdtFileType
+import com.github.aignatev.intellijxdtsyntax.xdt.file.XdtFileType
 import com.intellij.openapi.fileTypes.FileTypeConsumer
 import com.intellij.openapi.fileTypes.FileTypeFactory
 

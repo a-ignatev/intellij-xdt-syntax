@@ -1,4 +1,4 @@
-package com.github.aignatev.intellijxdtsyntax.xdt
+package com.github.aignatev.intellijxdtsyntax.xdt.utils
 
 import com.intellij.openapi.editor.DefaultLanguageHighlighterColors
 import com.intellij.openapi.editor.colors.TextAttributesKey

@@ -47,7 +47,7 @@ public class XdtLexer implements com.intellij.lexer.FlexLexer {
 
   /* The ZZ_CMAP_A table has 256 entries */
   static final char ZZ_CMAP_A[] = zzUnpackCMap(
-    "\12\0\1\1\2\3\1\2\42\0\12\4\113\0\1\3\142\0\2\3\26\0");
+    "\11\0\1\4\1\1\2\3\1\2\22\0\1\4\17\0\12\5\113\0\1\3\142\0\2\3\26\0");
 
   /** 
    * Translates DFA states to action switch labels.
@@ -55,11 +55,11 @@ public class XdtLexer implements com.intellij.lexer.FlexLexer {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\3\0\1\1\1\2\1\3\1\0\1\2\1\4\1\5"+
-    "\1\0\1\4\1\1\2\0\1\6\1\0\1\7";
+    "\3\0\1\1\1\2\1\3\1\0\2\2\1\4\1\5"+
+    "\1\0\1\4\1\1\4\0\1\6\1\0\1\7";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[18];
+    int [] result = new int[21];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -84,12 +84,12 @@ public class XdtLexer implements com.intellij.lexer.FlexLexer {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\5\0\12\0\17\0\24\0\24\0\31\0\36"+
-    "\0\24\0\24\0\43\0\50\0\55\0\62\0\67\0\24"+
-    "\0\74\0\24";
+    "\0\0\0\6\0\14\0\22\0\30\0\30\0\36\0\44"+
+    "\0\52\0\30\0\30\0\60\0\66\0\74\0\44\0\52"+
+    "\0\102\0\110\0\30\0\116\0\30";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[18];
+    int [] result = new int[21];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -112,14 +112,14 @@ public class XdtLexer implements com.intellij.lexer.FlexLexer {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\5\1\6\1\7\1\0\2\5\1\6\1\7\1\0"+
-    "\1\10\1\11\1\12\1\13\1\0\1\14\1\15\1\12"+
-    "\1\13\2\15\6\0\1\6\7\0\1\16\1\0\1\12"+
-    "\7\0\1\17\1\15\2\0\2\15\4\0\1\20\4\0"+
-    "\1\21\4\0\1\22";
+    "\1\5\1\6\1\7\1\0\3\5\1\6\1\7\1\0"+
+    "\1\10\1\11\1\12\1\13\1\14\1\0\1\12\1\15"+
+    "\1\16\1\13\1\14\3\16\7\0\1\6\10\0\1\17"+
+    "\1\20\5\0\1\21\1\0\1\13\11\0\1\22\1\16"+
+    "\2\0\3\16\5\0\1\23\5\0\1\24\5\0\1\25";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[65];
+    int [] result = new int[84];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -157,11 +157,11 @@ public class XdtLexer implements com.intellij.lexer.FlexLexer {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\3\0\1\1\2\11\1\0\1\1\2\11\1\0\2\1"+
-    "\2\0\1\11\1\0\1\11";
+    "\3\0\1\1\2\11\1\0\2\1\2\11\1\0\2\1"+
+    "\4\0\1\11\1\0\1\11";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[18];
+    int [] result = new int[21];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -495,7 +495,7 @@ public class XdtLexer implements com.intellij.lexer.FlexLexer {
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1: 
-            { return com.github.aignatev.intellijxdtsyntax.xdt.XdtTypes.INSTANCE.getDATA();
+            { return com.github.aignatev.intellijxdtsyntax.xdt.tokens.XdtTypes.INSTANCE.getDATA();
             } 
             // fall through
           case 8: break;
@@ -521,13 +521,13 @@ public class XdtLexer implements com.intellij.lexer.FlexLexer {
           case 12: break;
           case 6: 
             { yybegin(AFTER_LINE_LENGTH);
-        return com.github.aignatev.intellijxdtsyntax.xdt.XdtTypes.INSTANCE.getLINE_LENGTH();
+            return com.github.aignatev.intellijxdtsyntax.xdt.tokens.XdtTypes.INSTANCE.getLINE_LENGTH();
             } 
             // fall through
           case 13: break;
           case 7: 
             { yybegin(AFTER_IDENTIFIER);
-        return com.github.aignatev.intellijxdtsyntax.xdt.XdtTypes.INSTANCE.getIDENTIFIER();
+        return com.github.aignatev.intellijxdtsyntax.xdt.tokens.XdtTypes.INSTANCE.getIDENTIFIER();
             } 
             // fall through
           case 14: break;

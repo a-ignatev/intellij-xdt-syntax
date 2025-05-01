@@ -1,5 +1,7 @@
 package com.github.aignatev.intellijxdtsyntax.xdt
 
+import com.github.aignatev.intellijxdtsyntax.xdt.tokens.XdtTypes
+import com.github.aignatev.intellijxdtsyntax.xdt.utils.XdtHighlightingColors
 import com.intellij.lexer.Lexer
 import com.intellij.openapi.editor.colors.TextAttributesKey
 import com.intellij.openapi.fileTypes.SyntaxHighlighterBase
