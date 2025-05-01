@@ -10,5 +10,7 @@
         <fileTypeFactory implementation="com.github.aignatev.intellijxdtsyntax.factory.XdtFileTypeFactory"/>
         <lang.syntaxHighlighterFactory language="XDT"
                                        implementationClass="com.github.aignatev.intellijxdtsyntax.factory.XdtSyntaxHighlighterFactory"/>
+        <codeInsight.inlayProvider implementationClass="com.github.aignatev.intellijxdtsyntax.xdt.XdtInlayHintsProvider"
+                                   language="XDT"/>
     </extensions>
 </idea-plugin>

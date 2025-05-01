@@ -55,11 +55,11 @@ public class XdtLexer implements com.intellij.lexer.FlexLexer {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\4\0\1\1\1\2\1\0\2\1\1\3\1\4\3\0"+
-    "\1\5\1\0\1\6";
+    "\3\0\1\1\1\2\1\3\1\0\1\2\1\4\1\5"+
+    "\1\0\1\4\1\1\2\0\1\6\1\0\1\7";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[17];
+    int [] result = new int[18];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -85,11 +85,11 @@ public class XdtLexer implements com.intellij.lexer.FlexLexer {
 
   private static final String ZZ_ROWMAP_PACKED_0 =
     "\0\0\0\5\0\12\0\17\0\24\0\24\0\31\0\36"+
-    "\0\43\0\50\0\24\0\55\0\62\0\67\0\24\0\74"+
-    "\0\24";
+    "\0\24\0\24\0\43\0\50\0\55\0\62\0\67\0\24"+
+    "\0\74\0\24";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[17];
+    int [] result = new int[18];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -113,10 +113,10 @@ public class XdtLexer implements com.intellij.lexer.FlexLexer {
 
   private static final String ZZ_TRANS_PACKED_0 =
     "\1\5\1\6\1\7\1\0\2\5\1\6\1\7\1\0"+
-    "\1\10\1\5\3\0\1\11\1\12\1\13\1\14\2\12"+
-    "\6\0\1\6\7\0\1\15\4\0\1\16\1\12\2\0"+
-    "\2\12\1\0\1\13\7\0\1\17\4\0\1\20\4\0"+
-    "\1\21";
+    "\1\10\1\11\1\12\1\13\1\0\1\14\1\15\1\12"+
+    "\1\13\2\15\6\0\1\6\7\0\1\16\1\0\1\12"+
+    "\7\0\1\17\1\15\2\0\2\15\4\0\1\20\4\0"+
+    "\1\21\4\0\1\22";
 
   private static int [] zzUnpackTrans() {
     int [] result = new int[65];
@@ -157,11 +157,11 @@ public class XdtLexer implements com.intellij.lexer.FlexLexer {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\4\0\2\11\1\0\3\1\1\11\3\0\1\11\1\0"+
-    "\1\11";
+    "\3\0\1\1\2\11\1\0\1\1\2\11\1\0\2\1"+
+    "\2\0\1\11\1\0\1\11";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[17];
+    int [] result = new int[18];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -495,37 +495,42 @@ public class XdtLexer implements com.intellij.lexer.FlexLexer {
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1: 
-            { return com.intellij.psi.TokenType.BAD_CHARACTER;
-            } 
-            // fall through
-          case 7: break;
-          case 2: 
-            { return com.intellij.psi.TokenType.WHITE_SPACE;
-            } 
-            // fall through
-          case 8: break;
-          case 3: 
             { return com.github.aignatev.intellijxdtsyntax.xdt.XdtTypes.INSTANCE.getDATA();
             } 
             // fall through
+          case 8: break;
+          case 2: 
+            { return com.intellij.psi.TokenType.BAD_CHARACTER;
+            } 
+            // fall through
           case 9: break;
-          case 4: 
-            { yybegin(YYINITIAL); return com.intellij.psi.TokenType.WHITE_SPACE;
+          case 3: 
+            { return com.intellij.psi.TokenType.WHITE_SPACE;
             } 
             // fall through
           case 10: break;
+          case 4: 
+            { yybegin(YYINITIAL); return com.intellij.psi.TokenType.BAD_CHARACTER;
+            } 
+            // fall through
+          case 11: break;
           case 5: 
+            { yybegin(YYINITIAL); return com.intellij.psi.TokenType.WHITE_SPACE;
+            } 
+            // fall through
+          case 12: break;
+          case 6: 
             { yybegin(AFTER_LINE_LENGTH);
         return com.github.aignatev.intellijxdtsyntax.xdt.XdtTypes.INSTANCE.getLINE_LENGTH();
             } 
             // fall through
-          case 11: break;
-          case 6: 
+          case 13: break;
+          case 7: 
             { yybegin(AFTER_IDENTIFIER);
         return com.github.aignatev.intellijxdtsyntax.xdt.XdtTypes.INSTANCE.getIDENTIFIER();
             } 
             // fall through
-          case 12: break;
+          case 14: break;
           default:
             zzScanError(ZZ_NO_MATCH);
           }

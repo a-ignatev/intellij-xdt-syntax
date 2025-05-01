@@ -25,11 +25,12 @@
         yybegin(AFTER_IDENTIFIER);
         return com.github.aignatev.intellijxdtsyntax.xdt.XdtTypes.INSTANCE.getIDENTIFIER();
     }
-    .         { return com.intellij.psi.TokenType.BAD_CHARACTER; }
+    \r?\n     { yybegin(YYINITIAL); return com.intellij.psi.TokenType.WHITE_SPACE; }
+    .         { yybegin(YYINITIAL); return com.intellij.psi.TokenType.BAD_CHARACTER; }
 }
 
 <AFTER_IDENTIFIER> {
-    [^\r\n]+ { return com.github.aignatev.intellijxdtsyntax.xdt.XdtTypes.INSTANCE.getDATA(); }
+    [^\r\n]+? { return com.github.aignatev.intellijxdtsyntax.xdt.XdtTypes.INSTANCE.getDATA(); }
     \r?\n    { yybegin(YYINITIAL); return com.intellij.psi.TokenType.WHITE_SPACE; }
     .        { return com.intellij.psi.TokenType.BAD_CHARACTER; }
 }
