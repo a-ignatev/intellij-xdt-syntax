@@ -3,6 +3,7 @@
     <id>com.github.aignatev.intellijxdtsyntax</id>
     <name>XDT Syntax</name>
     <vendor>Andrei Ignatev</vendor>
+    <version>1.0.0</version>
 
     <depends>com.intellij.modules.platform</depends>
 
