@@ -4098,6 +4098,25 @@ Hinweis: Werte 001 bis 089 reserviert für Muster der vertragsärztlichen Versor
             """1 = eigen
 2 = fremd"""),
         KvdtField("9901", "Systeminterner Parameter", 0, 60, "A", "", """abcd/q<rs"""),
+        KvdtField("2710", "Lfd. Op-Nummer", 0, 60, "A", "", ""),
+        KvdtField("2711", "OP-Datum", 8, 8, "D", "", ""),
+        KvdtField("4135", "Hash-String Implantateregister", 0, 512, "", "", ""),
+        KvdtField("8402", "Geräte- und methodenspezifisches Feld", 0, 20, "A", "", ""),
+        KvdtField("9206", "Verwendeter Zeichensatz", 1, 1, "N", "", ""),
+        KvdtField("9213", "Version verwendeter Stammdatei", 0, 14, "A", "", ""),
+        KvdtField("9218", "GDT Version", 5, 5, "A", "", ""),
+        KvdtField("9230", "Prüfmodul-Version", 0, 6, "A", "", ""),
+        KvdtField("9231", "Steuerdatei-Version", 0, 60, "A", "", ""),
+        KvdtField("9232", "Prüfergebnis", 1, 1, "A", "", ""),
+        KvdtField("9234", "Prüfdatum", 8, 8, "D", "", ""),
+        KvdtField("9235", "Prüfzeit", 4, 4, "A", "", ""),
+        KvdtField("9236", "Name der geprüften Datei", 0, 60, "A", "", ""),
+        KvdtField("9237", "enthaltene Datenpakete der Datei", 1, 1, "N", "", ""),
+        KvdtField("9420", "Nummer der Meldung", 0, 60, "A", "", ""),
+        KvdtField("9421", "errorlevel der Meldung", 1, 1, "N", "", ""),
+        KvdtField("9422", "Parameter zur Fehlermeldung", 0, 60, "A", "", ""),
+        KvdtField("9423", "vollständiger Text der Fehlermeldung", 0, 60, "A", "", ""),
+        KvdtField("9424", "Satzart", 4, 4, "A", "", ""),
     )
 
 val kvdtFieldMap = kvdtFieldDefinitions.associateBy { it.key }
