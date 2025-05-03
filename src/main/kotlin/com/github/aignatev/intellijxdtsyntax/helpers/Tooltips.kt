@@ -6,10 +6,25 @@ fun getInformationTooltip(identifierText: String, kvdtField: KvdtField) =
     """
     <html>
     <b>${identifierText}</b> — <i>${kvdtField.name}</i><br>
-    ${kvdtField.lengthText()}
+    ${getLengthText(kvdtField)}<br>
+    <b>Type:</b> ${typeToName(kvdtField.fieldType)}<br>
+    ${getValueRange(kvdtField)}
+    ${getExplanation(kvdtField)}
     </html>
     """
         .trimIndent()
+
+fun getValueRange(kvdtField: KvdtField): String {
+  if (kvdtField.valueRange.isEmpty()) return ""
+
+  return "<br><b>Value range:</b><br>${kvdtField.valueRange.breakLines()}<br>"
+}
+
+fun getExplanation(kvdtField: KvdtField): String {
+  if (kvdtField.explanation.isEmpty()) return ""
+
+  return "<br><b>Explanation:</b><br>${kvdtField.explanation.breakLines()}<br>"
+}
 
 fun getWarningTooltip(identifierText: String) =
     """
@@ -20,13 +35,26 @@ fun getWarningTooltip(identifierText: String) =
     """
         .trimIndent()
 
-fun KvdtField.lengthText(): String {
-  val min = min
-  val max = max
+fun String.breakLines(): String {
+  val lines = this.split("\n")
+  return lines.joinToString("<br>")
+}
 
-  return if (min == max) {
-    "Valid length: $min"
-  } else {
-    "Valid length: $min–$max chars."
+fun typeToName(type: String): String {
+  return when (type) {
+    "A" -> "alphanumeric"
+    "N" -> "numeric"
+    "D" -> "date"
+    else -> type
+  }
+}
+
+fun getLengthText(kvdtField: KvdtField): String {
+  return kvdtField.let {
+    if (it.min == it.max) {
+      "<b>Valid length:</b> ${it.min}"
+    } else {
+      "<b>Valid length:</b> ${it.min}–${it.max} chars."
+    }
   }
 }
