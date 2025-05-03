@@ -1,6 +1,8 @@
 package com.github.aignatev.intellijxdtsyntax.extensions
 
-import com.github.aignatev.intellijxdtsyntax.xdt.fieldMap
+import com.github.aignatev.intellijxdtsyntax.helpers.getInformationTooltip
+import com.github.aignatev.intellijxdtsyntax.helpers.getWarningTooltip
+import com.github.aignatev.intellijxdtsyntax.xdt.kvdtFieldMap
 import com.github.aignatev.intellijxdtsyntax.xdt.tokens.XdtElementTypes
 import com.github.aignatev.intellijxdtsyntax.xdt.tokens.XdtTypes
 import com.intellij.codeInsight.hints.*
@@ -13,10 +15,17 @@ import javax.swing.JPanel
 @Suppress("UnstableApiUsage")
 class XdtInlayHintsProvider : InlayHintsProvider<NoSettings> {
   override val name: String
-    get() = "XDT Field Hints"
+    get() = "XDT field hints"
 
   override val key: SettingsKey<NoSettings> = SettingsKey("XDT.InlayHints")
-  override val previewText = "0138000sampledata"
+  override val previewText =
+      """
+      0138000con0
+      017910320780210
+      01091064
+      01002253
+      01002254
+      """
 
   override fun createConfigurable(settings: NoSettings): ImmediateConfigurable {
     return object : ImmediateConfigurable {
@@ -40,34 +49,28 @@ class XdtInlayHintsProvider : InlayHintsProvider<NoSettings> {
             element.node.getChildren(null).find { it.elementType == XdtTypes.IDENTIFIER }
 
         if (identifier != null) {
-          val fieldDefinition = fieldMap[identifier.text]
-          val fieldName = fieldDefinition?.name ?: "field is not found in the fields catalog!"
-          val textPresentation = factory.smallText(fieldName)
-          val lengthText =
-              fieldDefinition?.let {
-                val min = it.min
-                val max = it.max
-                if (min == max) {
-                  "Valid length: $min"
-                } else {
-                  "Valid length: $min–$max chars."
-                }
-              }
-          val tooltipPresentation =
-              factory.withTooltip(
-                  """
-                  ${identifier.text} — $fieldName
-                  $lengthText
-                  """
-                      .trimIndent(),
-                  textPresentation)
+          val kvdtField = kvdtFieldMap[identifier.text]
 
-          sink.addInlineElement(
-              element.textRange.endOffset,
-              relatesToPrecedingText = false,
-              tooltipPresentation,
-              true)
+          if (kvdtField != null) {
+            sink.addInlineElement(
+                element.textRange.endOffset,
+                relatesToPrecedingText = false,
+                factory.withTooltip(
+                    getInformationTooltip(identifier.text, kvdtField),
+                    factory.smallText(kvdtField.name)),
+                true)
+          } else {
+            sink.addInlineElement(
+                element.textRange.endOffset,
+                relatesToPrecedingText = false,
+                factory.withTooltip(
+                    getWarningTooltip(identifier.text),
+                    factory.smallText(
+                        "Field '${identifier.text}' is not found in the known KBV fields catalogue.")),
+                true)
+          }
         }
+
         return true
       }
     }

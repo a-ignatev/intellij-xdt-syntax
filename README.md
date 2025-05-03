@@ -3,7 +3,7 @@
 <!-- Plugin description -->
 xDT is a Intellij IDE plugin designed to simplify the reading and understanding of files in the xDT format.
 
-The fields catalog is based on data publicly available on
+The fields catalogue is based on data publicly available on
 the [KBV IT update website](https://update.kbv.de/ita-update/Service-Informationen/Feldkatalog/KBV_ITA_SIEX_Feld_und_Regelkatalog.pdf)
 as of 08.11.2023.
 <!-- Plugin description end -->
@@ -15,7 +15,7 @@ as of 08.11.2023.
 
 - Syntax highlighting
 - Syntax highlighting for xDT language injection in other files (currently only Kotlin)
-- Supplementary information display from the fields catalog
+- Supplementary information display from the fields catalogue
 
 ## Installation
 

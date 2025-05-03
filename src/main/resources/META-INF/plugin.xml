@@ -13,6 +13,8 @@
         <lang.syntaxHighlighterFactory language="XDT"
                                        implementationClass="com.github.aignatev.intellijxdtsyntax.extensions.XdtSyntaxHighlighterFactory"/>
         <multiHostInjector implementation="com.github.aignatev.intellijxdtsyntax.extensions.XdtLanguageInjector"/>
+        <annotator language="XDT"
+                   implementationClass="com.github.aignatev.intellijxdtsyntax.extensions.XdtFieldAnnotator"/>
     </extensions>
     <extensions defaultExtensionNs="com.intellij.codeInsight">
         <inlayProvider implementationClass="com.github.aignatev.intellijxdtsyntax.extensions.XdtInlayHintsProvider"
