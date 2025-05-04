@@ -7,7 +7,12 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <fileTypeFactory implementation="com.github.aignatev.intellijxdtsyntax.extensions.XdtFileTypeFactory"/>
+        <fileType implementationClass="com.github.aignatev.intellijxdtsyntax.xdt.file.XdtFileType"
+                  name="XDT"
+                  language="XDT"
+                  fieldName="INSTANCE"
+                  extensions="xdt;gdt;vik">
+        </fileType>
         <lang.parserDefinition language="XDT"
                                implementationClass="com.github.aignatev.intellijxdtsyntax.extensions.XdtParserDefinition"/>
         <lang.syntaxHighlighterFactory language="XDT"
