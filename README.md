@@ -5,7 +5,7 @@ xDT is a Intellij IDE plugin designed to simplify the reading and understanding 
 
 The fields catalogue is based on data publicly available on
 the [KBV IT update website](https://update.kbv.de/ita-update/Service-Informationen/Feldkatalog/KBV_ITA_SIEX_Feld_und_Regelkatalog.pdf)
-as of 08.11.2023.
+as of 03.05.2025.
 <!-- Plugin description end -->
 
 ![Current File](/assets/screenshot.png "xDT file highlighting")
