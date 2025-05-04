@@ -6,6 +6,6 @@ import com.intellij.openapi.fileTypes.FileTypeFactory
 
 class XdtFileTypeFactory : FileTypeFactory() {
   override fun createFileTypes(consumer: FileTypeConsumer) {
-    consumer.consume(XdtFileType, "xdt")
+    consumer.consume(XdtFileType, "xdt;con;gdt;vik")
   }
 }
