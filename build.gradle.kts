@@ -10,7 +10,7 @@ plugins {
   alias(libs.plugins.qodana) // Gradle Qodana Plugin
   alias(libs.plugins.kover) // Gradle Kover Plugin
 
-  id("org.jetbrains.grammarkit") version "2022.3.1" // Needed for .flex
+  id("org.jetbrains.grammarkit") version "2022.3.2.2" // Needed for .flex
 }
 
 group = providers.gradleProperty("pluginGroup").get()
