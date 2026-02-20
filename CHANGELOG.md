@@ -1,5 +1,9 @@
 # intellij-xdt-syntax Changelog
 
+## [1.4.1] - 2026-02-20:
+
+- Fixed compatibility with the latest versions of JetBrains IDEs.
+
 ## [1.4.0] - 2025-05-16:
 
 - Fixed line length validation.
